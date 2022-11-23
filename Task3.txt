@@ -1,0 +1,115 @@
+Q.For the given JSON iterate over all loops (for,for in,for of,forEach)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var req=new XMLHttpRequest();
+
+req.open('GET','https://restcountries.com/v3.1/all')
+
+req.send()
+
+req.onload=function(){
+
+    var api=req.response
+var t= JSON.parse(api)
+console.log(t)
+//console.log(t[0].idd.root)
+//console.log(t[100].car.side)
+//console.log(typeof(t))
+
+
+for(var i=0;i<t.length;i++)
+console.log(t[i].capital)
+
+
+   for(var g of t)
+  {
+     console.log(g.area)
+  }
+
+
+ for( var index in t){
+   console.log(t[index].continents)
+         }
+}
+
+    </script>
+</body>
+</html>
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Q. Create your own resume data in JSON format 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var Resume = {
+    "name": "Tabasum",
+    "middleName": "Murtujasab",
+    "lastName":"Nadaf",
+    "addrdess": {
+	"h.No" : 1818/2,
+	"street" : "Tisko Valley",
+    "land_Mark":"Opp MRF Ltd",
+    "city":"Ponda",
+    "state":"Goa",
+    "pincode":403406,
+    },
+    "contact" :{
+        "ph.No":+91-1234567891,
+        "emailId":"tabasum1206@gmail.com"
+    },
+    "qualification" : 
+    {
+    "degree":"B.E (Computer Engineering)",
+    "passoutyear":2020,
+    "%":"60%",
+},
+"skills":
+{
+    "basic":"C/C++, JavaScript",
+    "intermediate":"Java",
+    "platform":"eclipse, VS code",
+
+},
+"information":
+{
+    "dob":"12/06/1998",
+    "location":"Goa",
+    "gender":"Female",
+    "language_known":["English","Hindi","Marathi","Konkani","Kannada"],
+    "nationality":"Indian",
+},
+"hobby": {
+	"reading" : "facts related books",
+	"travelling" : "hill stations",
+	"sport" : "batminton",
+    "cooking":"Indian "
+    },    
+}
+//var t=JSON.stringify(Resume)
+//console.log(JSON.parse(t))
+console.log(Resume)
+    
+    </script>
+</body>
+</html>
